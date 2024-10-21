@@ -24,6 +24,8 @@ def main():
         gradeModifier = input("Please enter a grade modifier (+, - or nothing): ")  #while loop doesnt check if anything is entered for grade modifier because it being empty is valid
         if letterGrade.upper() == "A" or letterGrade.upper() == "B" or letterGrade.upper()==  "C" or letterGrade.upper() == "D" or letterGrade.upper() == "F": #checks for valid entry
             shouldRun = False    #entry is valid, finishes the loop
+        else:
+            print("Invalid letter grade, try again")
 
     if gradeModifier == "+" and letterGrade.upper() != "F" and letterGrade.upper() != "A": #will add + modifier if letter grade isnt A or F
         modifier += 0.3
