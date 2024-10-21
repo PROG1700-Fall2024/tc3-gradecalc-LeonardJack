@@ -16,9 +16,35 @@
 
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
+    shouldRun = True
+    grade = 0.0
+    modifier = 0.0
+    while shouldRun:    #while loop to make sure valid variable entry for letter grade
+        letterGrade = input("Please enter a valid letter grade (A, B, C, D and F): ")
+        gradeModifier = input("Please enter a grade modifier (+, - or nothing): ")  #while loop doesnt check if anything is entered for grade modifier because it being empty is valid
+        if letterGrade.upper() == "A" or letterGrade.upper() == "B" or letterGrade.upper()==  "C" or letterGrade.upper() == "D" or letterGrade.upper() == "F": #checks for valid entry
+            shouldRun = False    #entry is valid, finishes the loop
+
+    if gradeModifier == "+" and letterGrade.upper() != "F" and letterGrade.upper() != "A": #will add + modifier if letter grade isnt A or F
+        modifier += 0.3
+    elif gradeModifier == "-" and letterGrade.upper() != "F":   #adds - modifier if letter grade isnt F
+        modifier += -0.3
+
+    if letterGrade.upper() == "A":  #assigns base numeric values based on letter grade
+        grade += 4.0
+    elif letterGrade.upper() == "B":
+        grade += 3.0
+    elif letterGrade.upper() == "C":
+        grade += 2.0
+    elif letterGrade.upper() == "D":    #^^^^^^^^^^
+        grade += 1.0
+
+    grade += modifier #adds modifier to grade
+
+    print("Your grade in numeric value is {0:.1f}".format(grade))   #print statement formatted for output
 
 
-
+    
 
 
 
